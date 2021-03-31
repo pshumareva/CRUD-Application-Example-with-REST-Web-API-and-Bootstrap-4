@@ -1,0 +1,82 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Search by brand" [(ngModel)]="brand" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchByBrand()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Vehicle List</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let vehicle of vehicles; let i = index"
+                [class.active]="i == currentIndex" (click)="setCurrentVehicle(vehicle, i)">
+                {{vehicle.brand}}
+
+            </li>
+        </ul>
+
+        
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentVehicle">
+            <h4>Vehicle</h4>
+            <div>
+                <label><strong>Vehicle type:</strong></label>
+                {{vehicleTypes[currentVehicle.vehicleType].name}}
+            </div>
+
+            <div>
+                <label><strong>Brand:</strong></label>
+                {{currentVehicle.brand}}
+            </div>
+
+            <div>
+                <label><strong>Model:</strong></label>
+                {{currentVehicle.model}}
+            </div>
+
+            <div>
+                <label><strong>Construction Year:</strong></label>
+                {{currentVehicle.constructionYear}}
+            </div>
+
+            <div>
+                <label><strong>Fuel Type:</strong></label>
+                {{fuelTypes[currentVehicle.fuelType].name}}
+            </div>
+
+            <div>
+                <label><strong>Number Of Seats:</strong></label>
+                {{currentVehicle.numberOfSeats}}
+            </div>
+
+            <div>
+                <label><strong>Picture:</strong></label>
+                {{currentVehicle.picture}}
+            </div>
+
+            <div>
+                <label><strong>Price Per Day:</strong></label>
+                {{currentVehicle.pricePerDay}}
+            </div>
+
+            <div>
+                <label><strong>Count:</strong></label>
+                {{currentVehicle.count}}
+            </div>
+
+            <a class="badge badge-warning" routerLink="/vehicles/{{currentVehicle.id}}">
+                Edit
+            </a>
+        </div>
+
+        <div *ngIf="!currentVehicle">
+            <br />
+            <p>Please click on a vehicle</p>
+        </div>
+    </div>
+</div>

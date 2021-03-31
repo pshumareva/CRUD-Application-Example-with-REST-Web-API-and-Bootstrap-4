@@ -1,0 +1,111 @@
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentCustomer" class="edit-form">
+      <h4>Customer</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentCustomer.name"
+            name="name"
+            required 
+            minlength="3"
+            #name="ngModel"
+          />
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            [(ngModel)]="currentCustomer.email"
+            name="email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Enter a valid email.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone number:</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            [(ngModel)]="currentCustomer.phone"
+            name="phone"
+            required
+            pattern="[- +()0-9]+"
+            #phone="ngModel"
+          />
+          <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
+            <div *ngIf="phone.errors.required">
+              Phone number is required.
+            </div>
+            <div *ngIf="phone.errors.pattern">
+              Enter a valid phone number.
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+  
+        </div>
+      </form>
+  
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentCustomer.available"
+        (click)="setAvailableStatus(false)"
+      >
+        Set Not Available
+      </button>
+      <button
+        *ngIf="!currentCustomer.available"
+        class="badge badge-primary mr-2"
+        (click)="setAvailableStatus(true)"
+      >
+        Set Available
+      </button>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteCustomer()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateCustomer()"
+      >
+        Update
+      </button>
+      <p></p>
+    </div>
+  
+    <div *ngIf="!currentCustomer">
+      <br />
+      <p>This customer is not accessible</p>
+    </div>
+  </div>
+  

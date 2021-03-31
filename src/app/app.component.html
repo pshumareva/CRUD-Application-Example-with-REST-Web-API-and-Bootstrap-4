@@ -1,0 +1,29 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Rent-A-Car</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="vehicles" class="nav-link">Vehicles</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="vehiclescreate" class="nav-link">Create vehicle</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="customers" class="nav-link">Customers</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="customerscreate" class="nav-link">New customer</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="rentalEventscreate" class="nav-link">Rent a car</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="rentalEvents" class="nav-link">Rental Events</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

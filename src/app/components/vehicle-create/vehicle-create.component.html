@@ -1,0 +1,67 @@
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="vehicleType">Vehicle Type</label>
+        <select type="number" name="vehicleType" id="vehicleType" [(ngModel)]="vehicle.vehicleType"
+          class="form-control">
+          <option *ngFor="let vehicleType of vehicleTypes" [ngValue]="vehicleType.num">{{vehicleType.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" class="form-control" id="brand" required [(ngModel)]="vehicle.brand" name="brand" />
+      </div>
+
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input class="form-control" id="model" required [(ngModel)]="vehicle.model" name="model" />
+      </div>
+
+      <div class="form-group">
+        <label for="constructionYear">Construction Year</label>
+        <input class="form-control" type="number" id="constructionYear" required [(ngModel)]="vehicle.constructionYear"
+          name="constructionYear" />
+      </div>
+
+      <div class="form-group">
+        <label for="fuelType">Fuel Type</label>
+        <select type="number" name="fuelType" id="fuelType" [(ngModel)]="vehicle.fuelType" class="form-control">
+          <option *ngFor="let fuelType of fuelTypes" [ngValue]="fuelType.num">{{fuelType.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="numberOfSeats">Number Of Seats</label>
+        <input class="form-control" type="number" id="numberOfSeats" required [(ngModel)]="vehicle.numberOfSeats"
+          name="numberOfSeats" />
+      </div>
+
+      <div class="form-group">
+        <label for="picture">Picture URL</label>
+        <input class="form-control" id="picture" required [(ngModel)]="vehicle.picture" name="picture" />
+      </div>
+
+      <div class="form-group">
+        <label for="pricePerDay">Price Per Day</label>
+        <input class="form-control" type="number" id="pricePerDay" required [(ngModel)]="pricePerDay"
+          name="pricePerDay" />
+      </div>
+
+      <div class="form-group">
+        <label for="count">Count</label>
+        <input class="form-control" type="number" id="count" required [(ngModel)]="vehicle.count" name="count" />
+      </div>
+
+      <button (click)="createVehicle()" class="btn btn-success">Create</button>
+
+    </div>
+
+    <div *ngIf="submitted">
+      <h3>You successfully created a vehicle!</h3>
+      <button class="btn btn-success" (click)="newVehicle()">New</button>
+    </div>
+
+  </div>
+</div>

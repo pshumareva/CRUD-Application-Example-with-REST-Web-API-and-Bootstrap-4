@@ -1,0 +1,96 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "vehicleType": 1,
+      "brand": "Toyota",
+      "model": "Celica",
+      "constructionYear": 1990,
+      "fuelType": 2,
+      "numberOfSeats": 5,
+      "picture": "https://source.unsplash.com/1600x900/?vehicle",
+      "pricePerDay": 30,
+      "count": 4
+    },
+    {
+      "id": 2,
+      "vehicleType": 3,
+      "brand": "Opel",
+      "model": "Corsa",
+      "constructionYear": 1895,
+      "fuelType": 3,
+      "numberOfSeats": 5,
+      "picture": "https://source.unsplash.com/1600x900/?vehicle",
+      "pricePerDay": 25,
+      "count": 4
+    },
+    {
+      "vehicleType": 3,
+      "brand": "Honda",
+      "model": "Civic",
+      "constructionYear": "2005",
+      "fuelType": 1,
+      "numberOfSeats": 3,
+      "picture": "",
+      "pricePerDay": 0,
+      "count": "10",
+      "id": 3
+    },
+    {
+      "vehicleType": 4,
+      "brand": "Ferrari",
+      "model": "Nqkakuv",
+      "constructionYear": 1995,
+      "fuelType": 2,
+      "numberOfSeats": 4,
+      "picture": "",
+      "pricePerDay": 0,
+      "count": 2,
+      "id": 4
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Jonathan",
+      "email": "neshtosoleno@gmail.com",
+      "phone": "08889544874",
+      "available": false
+    },
+    {
+      "id": 2,
+      "name": "Whatever",
+      "email": "asdasd@gmail.com",
+      "phone": "0984548126"
+    },
+    {
+      "name": "Whoever",
+      "email": "kudhalkdha@abg.bf",
+      "phone": "62681308",
+      "id": 3
+    },
+    {
+      "name": "George",
+      "email": "fkuhsk@gmail.com",
+      "phone": "088956138135",
+      "id": 4
+    }
+  ],
+  "rentalEvents": [
+    {
+      "id": 2,
+      "startDate": "2021-03-14",
+      "endDate": "2021-03-21",
+      "vehicle": "Honda",
+      "customer": "Jennifer",
+      "available": false
+    },
+    {
+      "startDate": "2021-03-19",
+      "endDate": "2021-03-27",
+      "vehicle": "BMW",
+      "customer": "John",
+      "id": 4
+    }
+  ]
+}
